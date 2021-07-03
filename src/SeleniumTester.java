@@ -84,6 +84,10 @@ public class SeleniumTester {
 
         driver.findElement(By.id("nameFirstAndLast")).click();
 
+        String source= driver.getPageSource();
+
+        assertTrue(source.contains("You Might Also Like"));
+
 
         Thread.sleep(2000);
 
