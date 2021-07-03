@@ -68,6 +68,8 @@ public class SeleniumTester {
 
         driver.findElement(By.id("rafael")).click();
 
+        Thread.sleep(2000);
+
         String URL2 = driver.getCurrentUrl();
         assertTrue(URL2.contains("http://duotifyapp.us-east-2.elasticbeanstalk.com/register.php"));
 
@@ -81,6 +83,9 @@ public class SeleniumTester {
         Thread.sleep(2000);
 
         driver.findElement(By.id("nameFirstAndLast")).click();
+
+
+        Thread.sleep(2000);
 
 
 
