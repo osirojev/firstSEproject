@@ -26,22 +26,22 @@ public class SeleniumTester {
        }
 
         String s = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPGTSTIVWXYZ";
-        String password = "";
+        String username = "";
         for (int i = 0; i < 8; i++) {
-            password += s.charAt((int) (Math.random() * s.length()));
+            username += s.charAt((int) (Math.random() * s.length()));
         }
 
        driver.findElement(By.id("hideLogin")).click(); //step 3
 
-        driver.findElement(By.id("username")).sendKeys(password);
+        driver.findElement(By.id("username")).sendKeys(username);
 
         driver.findElement(By.id("firstName")).sendKeys("Oyatullo");
 
         driver.findElement(By.id("lastName")).sendKeys("Sirojev");
 
-        driver.findElement(By.id("email")).sendKeys(password+"@gmail.com");
+        driver.findElement(By.id("email")).sendKeys(username+"@gmail.com");
 
-        driver.findElement(By.id("email2")).sendKeys(password+"@gmail.com");
+        driver.findElement(By.id("email2")).sendKeys(username+"@gmail.com");
 
         driver.findElement(By.id("password")).sendKeys("Ago060707");
 
@@ -69,20 +69,20 @@ public class SeleniumTester {
         driver.findElement(By.id("rafael")).click();
 
         String URL2 = driver.getCurrentUrl();
-        assertTrue(URL2.contains("http://duotifyapp.us-east-2.elasticbeanstalk.com/browse.php?"));
+        assertTrue(URL2.contains("http://duotifyapp.us-east-2.elasticbeanstalk.com/register.php"));
 
         Thread.sleep(2000);
 
 
 
-        driver.findElement(By.id("loginUsername")).sendKeys(password);
+        driver.findElement(By.id("loginUsername")).sendKeys(username);
 
         driver.findElement(By.id("loginPassword")).sendKeys("Ago060707"+Keys.ENTER);
         Thread.sleep(2000);
 
         driver.findElement(By.id("nameFirstAndLast")).click();
 
-        Thread.sleep(2000);
+
 
         driver.findElement(By.id("rafael")).click();
 
