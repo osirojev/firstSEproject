@@ -2,10 +2,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import sun.jvm.hotspot.utilities.Assert;
-import static org.testng.Assert.*;
+
+import java.util.concurrent.TimeUnit;
+
+import static org.testng.Assert.assertTrue;
 
 public class SeleniumTester {
 
@@ -27,11 +27,13 @@ public class SeleniumTester {
 
         String s = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPGTSTIVWXYZ";
         String username = "";
-        for (int i = 0; i < 8; i++) {
+        for (int i = 0; i < 3; i++) {
             username += s.charAt((int) (Math.random() * s.length()));
         }
 
-       driver.findElement(By.id("hideLogin")).click(); //step 3
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+
+        driver.findElement(By.id("hideLogin")).click(); //step 3
 
         driver.findElement(By.id("username")).sendKeys(username);
 
@@ -64,23 +66,23 @@ public class SeleniumTester {
 
         assertTrue(driver.getPageSource().contains("Oyatullo Sirojev"));
 
-        Thread.sleep(2000);
+
 
         driver.findElement(By.id("rafael")).click();
 
-        Thread.sleep(2000);
+
 
         String URL2 = driver.getCurrentUrl();
         assertTrue(URL2.contains("http://duotifyapp.us-east-2.elasticbeanstalk.com/register.php"));
 
-        Thread.sleep(2000);
+
 
 
 
         driver.findElement(By.id("loginUsername")).sendKeys(username);
 
         driver.findElement(By.id("loginPassword")).sendKeys("Ago060707"+Keys.ENTER);
-        Thread.sleep(2000);
+
 
         driver.findElement(By.id("nameFirstAndLast")).click();
 
@@ -89,7 +91,7 @@ public class SeleniumTester {
         assertTrue(source.contains("You Might Also Like"));
 
 
-        Thread.sleep(2000);
+
 
 
 
