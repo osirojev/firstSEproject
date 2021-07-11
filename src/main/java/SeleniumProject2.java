@@ -56,9 +56,9 @@ public class SeleniumProject2 {
 
 
 
-String name=faker.name().fullName();
+        String name=faker.name().fullName();
         String address=faker.address().streetAddress();
-       String city=faker.address().city();
+        String city=faker.address().city();
         String state=faker.address().state();
 
         driver.findElement(By.name("ctl00$MainContent$fmwOrder$txtName")).sendKeys(name);
