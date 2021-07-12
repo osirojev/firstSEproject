@@ -182,7 +182,6 @@ public class SeleniumProject3 {
         }
 
 
-        //Sorry couldnt of  the last two  Verification :) I will do later and resubmit it , gotta go and review little bit.
 
 
 
