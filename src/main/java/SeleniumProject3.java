@@ -139,13 +139,48 @@ public class SeleniumProject3 {
 
 
         new Select (driver.findElement(By.xpath("//select[@class='srp-header-sort-select srp-header-sort-select-desktop--srp']"))).selectByValue("PRICE_DESC");
-        System.out.println(!sortedPrices.equals(priceList));
+
+        String resultHighToLow = "Price - High to Low";
+        if ( driver.getPageSource().contains("Price - High")){
+            System.out.println("Price Result is displayed from: \"" + resultHighToLow + "\"");
+        } else {
+            System.out.println("Result does not display: \"" + resultHighToLow);
+            Thread.sleep(1000);
+        }
+
+
 
         //16.Choose “Mileage - Low to High” option from Sort By menu
         new Select (driver.findElement(By.xpath("//select[@class='srp-header-sort-select srp-header-sort-select-desktop--srp']"))).selectByValue("MILEAGE_ASC");
 
-        //17.Choose “Year - New to Old” option from Sort By menu
+        //17
+
+        String reseultMileLowToHigh ="Mileage - Low to High";
+        if ( driver.getPageSource().contains("Mileage - Low")){
+            System.out.println("Mileage Result is displayed from: \"" + reseultMileLowToHigh + "\"");
+        } else {
+            System.out.println("Result does not display: \"" + resultHighToLow);
+            Thread.sleep(1000);
+        }
+
+
+
+
+
+
+
+        //18
         new Select (driver.findElement(By.xpath("//select[@class='srp-header-sort-select srp-header-sort-select-desktop--srp']"))).selectByValue("YEAR_DESC");
+
+       //19. Verify that the results are displayed from new to old year.
+        String newToOld ="Year - New to Old";
+        if ( driver.getPageSource().contains("Year - New")){
+            System.out.println("Year Result is displayed from: \"" + newToOld + "\"");
+        } else {
+            System.out.println("Result does not display: \"" + newToOld);
+            Thread.sleep(1000);
+        }
+
 
         //Sorry couldnt of  the last two  Verification :) I will do later and resubmit it , gotta go and review little bit.
 
